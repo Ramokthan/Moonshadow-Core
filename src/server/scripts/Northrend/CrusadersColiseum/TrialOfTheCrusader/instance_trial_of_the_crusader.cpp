@@ -267,10 +267,10 @@ class instance_trial_of_the_crusader : public InstanceMapScript
                     case TYPE_VALKIRIES:
                         switch (data)
                         {
-                            case FAIL:
-                                if (EncounterStatus[TYPE_VALKIRIES] == NOT_STARTED)
-                                    data = NOT_STARTED;
-                                break;
+                            //case FAIL:
+                            //    if (EncounterStatus[TYPE_VALKIRIES] == NOT_STARTED)
+                            //        data = NOT_STARTED;
+                            //    break;
                             case SPECIAL:
                                 if (EncounterStatus[TYPE_VALKIRIES] == SPECIAL)
                                     data = DONE;

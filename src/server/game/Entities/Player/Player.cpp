@@ -14968,9 +14968,11 @@ void Player::RewardQuest(Quest const *pQuest, uint32 reward, Object* questGiver,
         SetWeeklyQuestStatus(quest_id);
 
     RemoveActiveQuest(quest_id);
-    m_RewardedQuests.insert(quest_id);
+	if (!pQuest->IsDailyOrWeekly() && !pQuest->IsRepeatable())
+	{
+	m_RewardedQuests.insert(quest_id);
     m_RewardedQuestsSave[quest_id] = true;
-
+	}
     if (announce)
         SendQuestReward(pQuest, XP, questGiver);
 
