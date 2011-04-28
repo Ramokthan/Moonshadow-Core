@@ -57,7 +57,7 @@ enum DataTypes
     // Encounter States/Boss GUIDs
     DATA_LORD_MARROWGAR             = 0,
     DATA_LADY_DEATHWHISPER          = 1,
-    DATA_GUNSHIP_EVENT              = 2,
+    DATA_GUNSHIP_EVENT				= 2,
     DATA_DEATHBRINGER_SAURFANG      = 3,
     DATA_FESTERGUT                  = 4,
     DATA_ROTFACE                    = 5,
@@ -86,6 +86,8 @@ enum DataTypes
     DATA_TEAM_IN_INSTANCE           = 26,
     DATA_BLOOD_QUICKENING_STATE     = 27,
     DATA_HEROIC_ATTEMPTS            = 28,
+	DATA_GUNSHIP_BATTLE_EVENT		= 29,
+    DATA_GUNSHIP_BATTLE				= 30,
 };
 
 enum CreaturesIds

@@ -14,8 +14,8 @@ class wow_studio_teleporter : public CreatureScript
         {
         }
 
-        bool OnGossipHello(Player* player, Creature* creature)
-        {
+		void MainMenu(Player* player, Creature* creature)
+		{
             player->ADD_GOSSIP_ITEM(2, "Hauptst\303\244dte",                                  GOSSIP_SENDER_MAIN,   1);
 			player->ADD_GOSSIP_ITEM(2, "Kalimdor Instanzen",                                  GOSSIP_SENDER_MAIN,   2);
 			player->ADD_GOSSIP_ITEM(2, "Östliche K\303\266nigreiche Instanzen",              GOSSIP_SENDER_MAIN,   3);
@@ -26,6 +26,11 @@ class wow_studio_teleporter : public CreatureScript
 			player->ADD_GOSSIP_ITEM(2, "Nordend Raids",                                       GOSSIP_SENDER_MAIN,   8);
 			player->ADD_GOSSIP_ITEM(2, "Gurubashi Arena",                                     GOSSIP_SENDER_MAIN, 116);
             player->ADD_GOSSIP_ITEM(0, "Bye",                                                 GOSSIP_SENDER_MAIN, 200);
+		}
+
+        bool OnGossipHello(Player* player, Creature* creature)
+        {
+			MainMenu(player,creature);
 			player->PlayerTalkClass->SendGossipMenu(DEFAULT_GOSSIP_MESSAGE, creature->GetGUID());
             return true;
         }
@@ -189,15 +194,7 @@ class wow_studio_teleporter : public CreatureScript
 			};
 		if (action == 9)
 		{
-			player->ADD_GOSSIP_ITEM(2, "Hauptst\303\244dte",                                  GOSSIP_SENDER_MAIN,   1);
-			player->ADD_GOSSIP_ITEM(2, "Kalimdor Instanzen",                                  GOSSIP_SENDER_MAIN,   2);
-			player->ADD_GOSSIP_ITEM(2, "Östliche K\303\266nigreiche Instanzen",              GOSSIP_SENDER_MAIN,   3);
-			player->ADD_GOSSIP_ITEM(2, "Azeroth Schlachtz\303\274ge",                         GOSSIP_SENDER_MAIN,   4);
-			player->ADD_GOSSIP_ITEM(2, "Scherbenwelt Instanzen",                              GOSSIP_SENDER_MAIN,   5);
-			player->ADD_GOSSIP_ITEM(2, "Scherbenwelt Schlachtz\303\274ge",                    GOSSIP_SENDER_MAIN,   6);
-			player->ADD_GOSSIP_ITEM(2, "Nordend Instanzen",                                   GOSSIP_SENDER_MAIN,   7);
-			player->ADD_GOSSIP_ITEM(2, "Nordend Raids",                                       GOSSIP_SENDER_MAIN,   8);
-            player->ADD_GOSSIP_ITEM(0, "Bye",                                                 GOSSIP_SENDER_MAIN, 200);
+			MainMenu(player, creature);
 			player->PlayerTalkClass->SendGossipMenu(DEFAULT_GOSSIP_MESSAGE, creature->GetGUID());
 		};
 			}
